@@ -1,0 +1,136 @@
+#pragma once
+
+#include <iostream>
+
+namespace SGT {
+
+	template<typename _Type>
+	class Vector {
+
+	private:
+		_Type* m_array;
+		size_t m_capacity;
+		size_t m_size;
+
+	private:
+		void swap( _Type& first, _Type& second);
+		void reallocate();
+
+	public:
+		Vector();
+		~Vector();
+
+		void push_back(const _Type& data);
+		void insertAt(const _Type& data, const int& index);
+		void printData() const;
+		const size_t size() const;
+		void reverse();
+
+	};
+
+
+	//==================== Definitions ===================
+
+	//___________________ PRIVATE METHODS________________
+	
+
+	//Swap: time complexity: O(1)
+	template<typename _Type>
+	void Vector<_Type>::swap(_Type& first, _Type& second)
+	{
+		_Type temp = first;
+		first = second;
+		second = temp;
+	}
+
+	//Reallocate: if the size of the array exceeded its capacity reallocate the size of array
+	//Time complexity: O(N)
+	template<typename _Type>
+	void Vector<_Type>::reallocate()
+	{
+		m_capacity *= 1.5;
+		_Type* newArray = new _Type[m_capacity];
+
+		for (int i = 0; i < m_size; i++) {
+			newArray[i] = m_array[i];
+		}
+
+		delete[] m_array;
+
+		m_array = newArray;
+	}
+
+	//___________________ PUBLIC METHODS________________
+
+	template<typename _Type>
+	 Vector<_Type>::Vector()
+		 :m_capacity(10), m_size(0) {
+		 m_array = new _Type[m_capacity];
+	 }
+
+	 template<typename _Type>
+	 Vector<_Type>::~Vector()
+	 {
+		 delete[] m_array;
+	 }
+
+	 //Push_back: add the new data into our array
+	 //Time complexity: Best case O(1) | Worst case (reallocation happens): O(N)
+	template<typename _Type>
+	void Vector<_Type>::push_back(const _Type& data)
+	{
+		if (m_capacity == m_size) {
+			reallocate();
+		}
+
+		m_array[m_size++] = data;
+	}
+
+	//InsertAt: add the new data into a certain index of our array
+	//Time complexity: Best case O(1) | Worst case (reallocation happens or the target index is the initial element): O(N) 
+	template<typename _Type>
+	void Vector<_Type>::insertAt(const _Type& data, const int& index)
+	{
+		if (m_capacity == m_size) {
+			reallocate();
+		}
+		if (index < 0 || index > m_size) {
+			throw std::out_of_range("[Access violation]: cannot access the value outside the range of array");
+			return;
+		}
+
+		for (int i = m_size; i > index; i--) {
+			m_array[i] = m_array[i - 1];
+		}
+
+		m_array[index] = data;
+		m_size++;
+	}
+
+	//PrintData: Time complexity: O(n)
+	template<typename _Type>
+	void Vector<_Type>::printData() const
+	{
+		for (int i = 0; i < m_size; i++) {
+			std::cout << "[" << i + 1 << "]: " << m_array[i] <<std::endl;
+		}
+	}
+
+	//Size: Time complexity: O(1)
+	template<typename _Type>
+	const size_t Vector<_Type>::size() const
+	{
+		return m_size;
+	}
+	//Reverse: reverse the array
+	// Time complexity: O(Log n)
+	template<typename _Type>
+	void Vector<_Type>::reverse()
+	{
+		size_t size = m_size - 1;
+
+		for (int i = 0; i < size / 2; i++) {
+			swap(m_array[i], m_array[size - i]);
+		}
+	}
+}
