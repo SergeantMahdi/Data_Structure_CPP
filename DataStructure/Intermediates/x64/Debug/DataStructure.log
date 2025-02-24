@@ -1,0 +1,19 @@
+﻿  main.cpp
+E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\Vector\Vector.h(51,17): warning C4244: '*=': conversion from 'double' to 'size_t', possible loss of data
+  (compiling source file 'source/main.cpp')
+      E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\Vector\Vector.h(51,17):
+      the template instantiation context (the oldest one first) is
+          E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\main.cpp(5,19):
+          see reference to class template instantiation 'SGT::Vector<int>' being compiled
+          E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\Vector\Vector.h(67,4):
+          while compiling class template member function 'SGT::Vector<int>::Vector(void)'
+              E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\main.cpp(5,19):
+              see the first reference to 'SGT::Vector<int>::Vector' in 'main'
+          E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\Vector\Vector.h(50,2):
+          while compiling class template member function 'void SGT::Vector<int>::reallocate(void)'
+              E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\Vector\Vector.h(83,14):
+              see the first reference to 'SGT::Vector<int>::reallocate' in 'SGT::Vector<int>::push_back'
+              E:\ProgrammingProjects\C++\DataStructure\DataStructure\source\main.cpp(8,16):
+              see the first reference to 'SGT::Vector<int>::push_back' in 'main'
+  
+  DataStructure.vcxproj -> E:\ProgrammingProjects\C++\DataStructure\Build\x64\Debug\DataStructure.exe
