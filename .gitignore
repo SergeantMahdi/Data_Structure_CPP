@@ -8,4 +8,6 @@
 
 *.pdb
 *.d
+
 Build/
+Intermediates/
