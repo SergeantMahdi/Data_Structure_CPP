@@ -10,17 +10,7 @@ int main() {
 	std::cout << "=======================\n";
 	vec.printData();
 
-	//vec.insertAt(99, 1);
-	//vec.printData();
-	
-	std::cout << "=======================\n";
-	vec.removeAt(1);
-	vec.printData();
-	std::cout << "=======================\n";
-	vec.remove(0);
-	vec.printData();
-
-	if (vec.linearSearch(55)) {
+	if (vec.BinarySearch(55)) {
 		std::cout << "Exists!\n";
 	}
 	else {

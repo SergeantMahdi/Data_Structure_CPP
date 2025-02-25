@@ -27,7 +27,8 @@ namespace SGT {
 		void reverse();
 		void removeAt(const int& index);
 		void remove(const _Type& data);
-		const int linearSearch(const _Type& data);
+		const bool linearSearch(const _Type& data) const;
+		const bool BinarySearch(const _Type& data) const;
 
 	};
 
@@ -178,16 +179,41 @@ namespace SGT {
 	// a user search for it, it'll make less process to get the same value
 	// Time complexity: O(n)
 	template<typename _Type>
-	const int Vector<_Type>::linearSearch(const _Type& data)
+	const bool Vector<_Type>::linearSearch(const _Type& data) const
 	{
 		for (int i = 0; i < m_size; i++) {
 			if (m_array[i] == data) {
 				if (i != 0) {
 					swap(m_array[i], m_array[i - 1]);
 				}
-				return 1;
+				return true;
 			}
 		}
-		return 0;
+		return false;
+	}
+	//LinearSearch: check if an element exists
+	// Time complexity: O(Log n)
+	template<typename _Type>
+	const bool Vector<_Type>::BinarySearch(const _Type& data) const
+	{
+		int low = 0;
+		int high = m_size - 1;
+		int middle;
+
+		while (low <= high) {
+
+		middle= low + high / 2;
+
+			if (data == m_array[middle]) {
+				return true;
+			}
+			else if (data > m_array[middle]) {
+				low = middle + 1;
+			}
+			else if (data < m_array[middle]) {
+				high = middle - 1;
+			}
+		}
+		return false;
 	}
 }
