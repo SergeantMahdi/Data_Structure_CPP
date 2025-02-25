@@ -46,7 +46,7 @@ namespace SGT {
 		second = temp;
 	}
 
-	//Reallocate: if the size of the array exceeded its capacity reallocate the size of array
+	//Reallocate: if the size of the array is exceeded its capacity, increase the size of array 1.5 times more
 	//Time complexity: O(N)
 	template<typename _Type>
 	void Vector<_Type>::reallocate()
@@ -77,7 +77,7 @@ namespace SGT {
 		 delete[] m_array;
 	 }
 
-	 //Push_back: add the new data into our array
+	 //Push_back: add a new data into the array
 	 //Time complexity: Best case O(1) | Worst case (reallocation happens): O(N)
 	template<typename _Type>
 	void Vector<_Type>::push_back(const _Type& data)
@@ -89,7 +89,7 @@ namespace SGT {
 		m_array[m_size++] = data;
 	}
 
-	//InsertAt: add the new data into a certain index of our array
+	//InsertAt: add a new data into a certain index of the array
 	//Time complexity: Best case O(1) | Worst case (reallocation happens or the target index is the initial element): O(N) 
 	template<typename _Type>
 	void Vector<_Type>::insertAt(const _Type& data, const int& index)
@@ -110,7 +110,7 @@ namespace SGT {
 		m_size++;
 	}
 
-	//PrintData: Time complexity: O(n)
+	//PrintData: Time complexity: O(N)
 	template<typename _Type>
 	void Vector<_Type>::printData() const
 	{
@@ -126,7 +126,7 @@ namespace SGT {
 		return m_size;
 	}
 	//Reverse: reverse the array
-	// Time complexity: O(Log n)
+	// Time complexity: O(n/2) ==> O(N)
 	template<typename _Type>
 	void Vector<_Type>::reverse()
 	{
@@ -138,7 +138,7 @@ namespace SGT {
 	}
 
 	//removeAt: remove an element at a certain index
-	// Time complexity: O(n)
+	// Time complexity: O(N)
 	template<typename _Type>
 	void Vector<_Type>::removeAt(const int& index)
 	{
@@ -152,8 +152,8 @@ namespace SGT {
 		m_size--;
 	}
 
-	//removeAt: find and remove an element from element
-	// Time complexity: O(2n) == O(n)
+	//removeAt: find and remove an element from the array
+	// Time complexity: O(2n) == O(N)
 	template<typename _Type>
 	void Vector<_Type>::remove(const _Type& data)
 	{
@@ -173,9 +173,9 @@ namespace SGT {
 	}
 
 	//LinearSearch: check if an element exists, using transitioning method
-	// Transitioning Method: There is always a chance that user search for the same data over an over
+	// Transitioning Method: There is always a chance that a user searches for the same data over an over
 	// in this case everytime the element is searched we move the element one slot to the front so the next time
-	// user search for it, it'll make less process
+	// a user search for it, it'll make less process to get the same value
 	// Time complexity: O(n)
 	template<typename _Type>
 	const int Vector<_Type>::linearSearch(const _Type& data)
