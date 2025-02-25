@@ -19,4 +19,11 @@ int main() {
 	std::cout << "=======================\n";
 	vec.remove(0);
 	vec.printData();
+
+	if (vec.linearSearch(55)) {
+		std::cout << "Exists!\n";
+	}
+	else {
+		std::cout << "NOT Exists!\n";
+	}
 }

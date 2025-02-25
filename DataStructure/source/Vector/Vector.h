@@ -27,6 +27,7 @@ namespace SGT {
 		void reverse();
 		void removeAt(const int& index);
 		void remove(const _Type& data);
+		const int linearSearch(const _Type& data);
 
 	};
 
@@ -169,5 +170,24 @@ namespace SGT {
 
 		std::cout << "[Invalid]: The given data doesn't exit\n";
 
+	}
+
+	//LinearSearch: check if an element exists, using transitioning method
+	// Transitioning Method: There is always a chance that user search for the same data over an over
+	// in this case everytime the element is searched we move the element one slot to the front so the next time
+	// user search for it, it'll make less process
+	// Time complexity: O(n)
+	template<typename _Type>
+	const int Vector<_Type>::linearSearch(const _Type& data)
+	{
+		for (int i = 0; i < m_size; i++) {
+			if (m_array[i] == data) {
+				if (i != 0) {
+					swap(m_array[i], m_array[i - 1]);
+				}
+				return 1;
+			}
+		}
+		return 0;
 	}
 }
