@@ -11,10 +11,12 @@ int main() {
 	vec.printData();
 
 	//vec.insertAt(99, 1);
-	//std::cout << "=======================\n";
 	//vec.printData();
 	
-	vec.reverse();
 	std::cout << "=======================\n";
+	vec.removeAt(1);
+	vec.printData();
+	std::cout << "=======================\n";
+	vec.remove(0);
 	vec.printData();
 }

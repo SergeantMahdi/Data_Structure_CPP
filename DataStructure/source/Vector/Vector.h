@@ -25,6 +25,8 @@ namespace SGT {
 		void printData() const;
 		const size_t size() const;
 		void reverse();
+		void removeAt(const int& index);
+		void remove(const _Type& data);
 
 	};
 
@@ -132,5 +134,40 @@ namespace SGT {
 		for (int i = 0; i < size / 2; i++) {
 			swap(m_array[i], m_array[size - i]);
 		}
+	}
+
+	//removeAt: remove an element at a certain index
+	// Time complexity: O(n)
+	template<typename _Type>
+	void Vector<_Type>::removeAt(const int& index)
+	{
+		if (index < 0 || index > m_size) {
+			throw std::out_of_range("[Access violation]: cannot access the value outside the range of array");
+			return;
+		}
+		for (int i = index; i < m_size - 1; i++) {
+			m_array[i] = m_array[i + 1];
+		}
+		m_size--;
+	}
+
+	//removeAt: find and remove an element from element
+	// Time complexity: O(2n) == O(n)
+	template<typename _Type>
+	void Vector<_Type>::remove(const _Type& data)
+	{
+		for (int i = 0; i < m_size; i++) {
+			std::cout << "Array: " << m_array[i] << ", Data: " << data << std::endl;
+			if (m_array[i] == data) {
+				for (int j = i; j < m_size; j++) {
+					m_array[j] = m_array[j + 1];
+				}
+					m_size--;
+					return;
+			}
+		}
+
+		std::cout << "[Invalid]: The given data doesn't exit\n";
+
 	}
 }
