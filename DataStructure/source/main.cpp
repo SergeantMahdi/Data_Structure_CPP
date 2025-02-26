@@ -8,7 +8,7 @@ int main() {
 		vec.push_back(i);
 	}
 	vec[1] = 100;
-	vec.removeAt(1);
+	std::cout << "[Max]: " << vec.max() << std::endl;
 	std::cout << "=======================\n";
 	vec.printData();
 }

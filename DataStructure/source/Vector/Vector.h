@@ -29,6 +29,7 @@ namespace SGT {
 		void remove(const _Type& data);
 		const bool linearSearch(const _Type& data) const;
 		const bool BinarySearch(const _Type& data) const;
+		const _Type max() const;
 
 		//--------------OverLoading Operators-------------
 		_Type& operator[] (const int& index) const;
@@ -221,6 +222,22 @@ namespace SGT {
 		}
 		return false;
 	}
+
+	//Max: Find the maximum number of the array (Only for comparable data types)
+	//Time Complexity: O(N)
+	template<typename _Type>
+	const _Type Vector<_Type>::max() const
+	{
+		_Type max = m_array[0];
+		for (int i = 1; i < m_size; i++) {
+			if (m_array[i] > max) {
+				max = m_array[i];
+			}
+		}
+		return max;
+	}
+
+	//---------------------Operator Overloaing-------------------------------
 	template<typename _Type>
 	_Type& Vector<_Type>::operator[](const int& index) const
 	{
