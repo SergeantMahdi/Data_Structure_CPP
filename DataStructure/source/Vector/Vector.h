@@ -30,6 +30,9 @@ namespace SGT {
 		const bool linearSearch(const _Type& data) const;
 		const bool BinarySearch(const _Type& data) const;
 
+		//--------------OverLoading Operators-------------
+		_Type& operator[] (const int& index) const;
+
 	};
 
 
@@ -217,5 +220,15 @@ namespace SGT {
 			}
 		}
 		return false;
+	}
+	template<typename _Type>
+	_Type& Vector<_Type>::operator[](const int& index) const
+	{
+		if (index < 0 || index > m_size) {
+			throw std::out_of_range("[Access violation]: cannot access the value outside the range of array");
+			std::exit(1);
+		}
+
+		return m_array[index];
 	}
 }

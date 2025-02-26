@@ -7,13 +7,8 @@ int main() {
 	for (int i = 0; i < 13; i++) {
 		vec.push_back(i);
 	}
+	vec[1] = 100;
+	vec.removeAt(1);
 	std::cout << "=======================\n";
 	vec.printData();
-
-	if (vec.BinarySearch(55)) {
-		std::cout << "Exists!\n";
-	}
-	else {
-		std::cout << "NOT Exists!\n";
-	}
 }
