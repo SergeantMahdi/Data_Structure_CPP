@@ -191,11 +191,13 @@ namespace SGT {
 		}
 		return false;
 	}
-	//LinearSearch: check if an element exists
+	//BinarySearch: check if an element exists
+	// [NOTE]: in binary search array must be sorted
 	// Time complexity: O(Log n)
 	template<typename _Type>
 	const bool Vector<_Type>::BinarySearch(const _Type& data) const
 	{
+
 		int low = 0;
 		int high = m_size - 1;
 		int middle;
