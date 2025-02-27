@@ -27,6 +27,7 @@ namespace SGT {
 		void reverse();
 		void removeAt(const int& index);
 		void remove(const _Type& data);
+		_Type pop_back();
 		const bool linearSearch(const _Type& data) const;
 		const bool BinarySearch(const _Type& data) const;
 		const _Type max() const;
@@ -175,6 +176,17 @@ namespace SGT {
 
 		std::cout << "[Invalid]: The given data doesn't exit\n";
 
+	}
+
+	//Pop_back: Return and remove the last element
+	//Time Complexity: O(1)
+	template<typename _Type>
+	_Type Vector<_Type>::pop_back()
+	{
+		_Type data = std::move(m_array[m_size - 1]);
+		m_size--;
+		
+		return data;
 	}
 
 	//LinearSearch: check if an element exists, using transitioning method
