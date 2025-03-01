@@ -28,9 +28,8 @@ namespace SGT {
 		void removeAt(const int& index);
 		void remove(const _Type& data);
 		_Type pop_back();
-		const bool linearSearch(const _Type& data) const;
-		const bool BinarySearch(const _Type& data) const;
-		const _Type max() const;
+		void reserve(const size_t& reservedMemorySize);
+		const size_t maxCapacity();
 
 		//--------------OverLoading Operators-------------
 		_Type& operator[] (const int& index) const;
@@ -100,6 +99,7 @@ namespace SGT {
 	template<typename _Type>
 	void Vector<_Type>::insertAt(const _Type& data, const int& index)
 	{
+		std::cout << "Allocating memory" << std::endl;
 		if (m_capacity == m_size) {
 			reallocate();
 		}
@@ -187,6 +187,28 @@ namespace SGT {
 		m_size--;
 		
 		return data;
+	}
+
+	template<typename _Type>
+	void Vector<_Type>::reserve(const size_t& reservedMemorySize)
+	{
+		m_capacity += reservedMemorySize;
+
+		_Type* newArray = new _Type[m_capacity];
+
+		for (int i = 0; i < m_size; i++) {
+			newArray[i] = m_array[i];
+		}
+
+		delete[] m_array;
+
+		m_array = newArray;
+	}
+
+	template<typename _Type>
+	const size_t Vector<_Type>::maxCapacity()
+	{
+		return m_capacity;
 	}
 
 	//---------------------Operator Overloaing-------------------------------
