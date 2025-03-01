@@ -30,6 +30,7 @@ namespace SGT {
 		_Type pop_back();
 		void reserve(const size_t& reservedMemorySize);
 		const size_t maxCapacity();
+		void clear();
 
 		//--------------OverLoading Operators-------------
 		_Type& operator[] (const int& index) const;
@@ -120,6 +121,9 @@ namespace SGT {
 	template<typename _Type>
 	void Vector<_Type>::printData() const
 	{
+		if (m_size == 0) {
+			std::cout << "Vector is empty\n";
+		}
 		for (int i = 0; i < m_size; i++) {
 			std::cout << "[" << i + 1 << "]: " << m_array[i] <<std::endl;
 		}
@@ -209,6 +213,14 @@ namespace SGT {
 	const size_t Vector<_Type>::maxCapacity()
 	{
 		return m_capacity;
+	}
+
+	template<typename _Type>
+	void Vector<_Type>::clear()
+	{
+		delete[] m_array;
+		m_array = new _Type[m_capacity];
+		m_size = 0;
 	}
 
 	//---------------------Operator Overloaing-------------------------------
