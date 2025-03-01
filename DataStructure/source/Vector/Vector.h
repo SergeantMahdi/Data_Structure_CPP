@@ -189,66 +189,6 @@ namespace SGT {
 		return data;
 	}
 
-	//LinearSearch: check if an element exists, using transitioning method
-	// Transitioning Method: There is always a chance that a user searches for the same data over an over
-	// in this case everytime the element is searched we move the element one slot to the front so the next time
-	// a user search for it, it'll make less process to get the same value
-	// Time complexity: O(n)
-	template<typename _Type>
-	const bool Vector<_Type>::linearSearch(const _Type& data) const
-	{
-		for (int i = 0; i < m_size; i++) {
-			if (m_array[i] == data) {
-				if (i != 0) {
-					swap(m_array[i], m_array[i - 1]);
-				}
-				return true;
-			}
-		}
-		return false;
-	}
-	//BinarySearch: check if an element exists
-	// [NOTE]: in binary search array must be sorted
-	// Time complexity: O(Log n)
-	template<typename _Type>
-	const bool Vector<_Type>::BinarySearch(const _Type& data) const
-	{
-
-		int low = 0;
-		int high = m_size - 1;
-		int middle;
-
-		while (low <= high) {
-
-		middle= low + high / 2;
-
-			if (data == m_array[middle]) {
-				return true;
-			}
-			else if (data > m_array[middle]) {
-				low = middle + 1;
-			}
-			else if (data < m_array[middle]) {
-				high = middle - 1;
-			}
-		}
-		return false;
-	}
-
-	//Max: Find the maximum number of the array (Only for comparable data types)
-	//Time Complexity: O(N)
-	template<typename _Type>
-	const _Type Vector<_Type>::max() const
-	{
-		_Type max = m_array[0];
-		for (int i = 1; i < m_size; i++) {
-			if (m_array[i] > max) {
-				max = m_array[i];
-			}
-		}
-		return max;
-	}
-
 	//---------------------Operator Overloaing-------------------------------
 	template<typename _Type>
 	_Type& Vector<_Type>::operator[](const int& index) const
