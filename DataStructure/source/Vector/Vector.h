@@ -21,7 +21,7 @@ namespace SGT {
 		~Vector();
 
 		void push_back(const _Type& data);
-		void emplace_back(_Type&& data) const;
+		void push_back(_Type&& data);
 		void insertAt(const _Type& data, const int& index);
 		void printData() const;
 		const size_t size() const;
@@ -99,7 +99,7 @@ namespace SGT {
 	}
 
 	template<typename _Type>
-	void Vector<_Type>::emplace_back(_Type&& data) const
+	void Vector<_Type>::push_back(_Type&& data)
 	{
 		if (m_capacity == m_size) {
 			reallocate();
