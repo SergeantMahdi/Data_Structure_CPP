@@ -21,6 +21,7 @@ namespace SGT {
 		~Vector();
 
 		void push_back(const _Type& data);
+		void push_back(_Type&& data);
 		void insertAt(const _Type& data, const int& index);
 		void printData() const;
 		const size_t size() const;
@@ -33,7 +34,9 @@ namespace SGT {
 		void clear();
 
 		//--------------OverLoading Operators-------------
-		_Type& operator[] (const int& index) const;
+		_Type& operator[] (const int& index);
+		const _Type& operator[] (const int& index) const;
+
 
 	};
 
@@ -61,7 +64,7 @@ namespace SGT {
 		_Type* newArray = new _Type[m_capacity];
 
 		for (int i = 0; i < m_size; i++) {
-			newArray[i] = m_array[i];
+			newArray[i] = std::move(m_array[i]);
 		}
 
 		delete[] m_array;
@@ -93,6 +96,16 @@ namespace SGT {
 		}
 
 		m_array[m_size++] = data;
+	}
+
+	template<typename _Type>
+	void Vector<_Type>::push_back(_Type&& data)
+	{
+		if (m_capacity == m_size) {
+			reallocate();
+		}
+
+		m_array[m_size++] = std::move(data);
 	}
 
 	//InsertAt: add a new data into a certain index of the array
@@ -127,6 +140,7 @@ namespace SGT {
 		for (int i = 0; i < m_size; i++) {
 			std::cout << "[" << i + 1 << "]: " << m_array[i] <<std::endl;
 		}
+		std::cout << "======================================\n";
 	}
 
 	//Size: Time complexity: O(1)
@@ -225,7 +239,17 @@ namespace SGT {
 
 	//---------------------Operator Overloaing-------------------------------
 	template<typename _Type>
-	_Type& Vector<_Type>::operator[](const int& index) const
+	_Type& Vector<_Type>::operator[](const int& index)
+	{
+		if (index < 0 || index > m_size) {
+			throw std::out_of_range("[Access violation]: cannot access the value outside the range of array");
+			std::exit(1);
+		}
+
+		return m_array[index];
+	}
+	template<typename _Type>
+	const _Type& Vector<_Type>::operator[](const int& index) const
 	{
 		if (index < 0 || index > m_size) {
 			throw std::out_of_range("[Access violation]: cannot access the value outside the range of array");

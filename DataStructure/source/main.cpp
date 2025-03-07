@@ -9,7 +9,7 @@ int main() {
 
 
 	for (int i = 0; i < 16; i++) {
-		vec.push_back(i);
+		vec.emplace_back(i);
 	}
 	
 	vec.push_back(100);
