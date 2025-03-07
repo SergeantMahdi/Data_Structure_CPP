@@ -21,6 +21,7 @@ namespace SGT {
 		~Vector();
 
 		void push_back(const _Type& data);
+		void emplace_back(_Type&& data) const;
 		void insertAt(const _Type& data, const int& index);
 		void printData() const;
 		const size_t size() const;
@@ -63,7 +64,7 @@ namespace SGT {
 		_Type* newArray = new _Type[m_capacity];
 
 		for (int i = 0; i < m_size; i++) {
-			newArray[i] = m_array[i];
+			newArray[i] = std::move(m_array[i]);
 		}
 
 		delete[] m_array;
@@ -95,6 +96,16 @@ namespace SGT {
 		}
 
 		m_array[m_size++] = data;
+	}
+
+	template<typename _Type>
+	void Vector<_Type>::emplace_back(_Type&& data) const
+	{
+		if (m_capacity == m_size) {
+			reallocate();
+		}
+
+		m_array[m_size++] = std::move(data);
 	}
 
 	//InsertAt: add a new data into a certain index of the array
@@ -129,6 +140,7 @@ namespace SGT {
 		for (int i = 0; i < m_size; i++) {
 			std::cout << "[" << i + 1 << "]: " << m_array[i] <<std::endl;
 		}
+		std::cout << "======================================\n";
 	}
 
 	//Size: Time complexity: O(1)
