@@ -4,6 +4,6 @@
 
 int main() {
 	SGT::String str = "Hello World";
-	str.toUpperCase();
+	str.reverse();
 	std::cout << str << std::endl;
 }

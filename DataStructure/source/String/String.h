@@ -9,6 +9,12 @@ namespace SGT {
 	private:
 		char* m_string;
 		size_t m_length;
+	private:
+		void swap(char& first, char& second) {
+			char temp = first;
+			first = second;
+			second = temp;
+		}
 	public:
 		//------------------------Constructor------------------------------
 
@@ -64,6 +70,13 @@ namespace SGT {
 				if (m_string[i] > 96 && m_string[i] < 123) {
 					m_string[i] -= 32;
 				}
+			}
+		}
+
+		void reverse() {
+			size_t size = m_length - 1;
+			for (int i = 0; i < size/2; i++) {
+				swap(m_string[i], m_string[size - i]);
 			}
 		}
 
