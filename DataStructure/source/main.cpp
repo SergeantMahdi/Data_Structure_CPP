@@ -4,6 +4,7 @@
 
 int main() {
 	SGT::String str = "Hello World";
-	str.reverse();
-	std::cout << str << std::endl;
+	SGT::String str2 = "Hello World";
+
+	std::cout << str.isTheSame("Hello World") << std::endl;
 }

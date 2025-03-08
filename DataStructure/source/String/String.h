@@ -72,12 +72,30 @@ namespace SGT {
 				}
 			}
 		}
-
+		//Time Complexity: O(N/2) ==> O(N)
 		void reverse() {
 			size_t size = m_length - 1;
 			for (int i = 0; i < size/2; i++) {
 				swap(m_string[i], m_string[size - i]);
 			}
+		}
+
+		//Check if the strings are the same
+		//Time Complexity: O(N)
+		const bool isTheSame(const String& other) const{
+			for (int i = 0; i < m_length; i++) {
+				if (m_length != other.m_length && !m_string[i] != other.m_string[i])
+					return false;
+			}
+			return true;
+		}
+
+		const bool isTheSame(const char* text) const {
+			for (int i = 0; i < m_length; i++) {
+				if (m_length != strlen(text) && !m_string[i] != text[i])
+					return false;
+			}
+			return true;
 		}
 
 		//------------------------Operator-Overloading------------------------------
