@@ -15,6 +15,7 @@ namespace SGT {
 	private:
 		void swap( _Type& first, _Type& second);
 		void reallocate();
+		void shrinkMemoryAllocation();
 
 	public:
 		Vector();
@@ -70,6 +71,22 @@ namespace SGT {
 		delete[] m_array;
 
 		m_array = newArray;
+	}
+
+	template<typename _Type>
+	void Vector<_Type>::shrinkMemoryAllocation()
+	{
+		m_capacity /= 1.5;
+		_Type* newArray = new _Type[m_capacity];
+
+		for (int i = 0; i < m_size; i++) {
+			newArray[i] = std::move(m_array[i]);
+		}
+
+		delete[] m_array;
+
+		m_array = newArray;
+
 	}
 
 	//___________________ PUBLIC METHODS________________
@@ -162,6 +179,7 @@ namespace SGT {
 	}
 
 	//removeAt: remove an element at a certain index
+	//if you want to remove and add element at a certain location, you'd better use list.
 	// Time complexity: O(N)
 	template<typename _Type>
 	void Vector<_Type>::removeAt(const int& index)
@@ -169,6 +187,9 @@ namespace SGT {
 		if (index < 0 || index > m_size) {
 			throw std::out_of_range("[Access violation]: cannot access the value outside the range of array");
 			return;
+		}
+		if (m_capacity > 10 && m_size == m_capacity / 3 ) { //if only 1/3 of memory blocks filled with data shrink the occupied memory block 
+			shrinkMemoryAllocation();
 		}
 		for (int i = index; i < m_size - 1; i++) {
 			m_array[i] = m_array[i + 1];
@@ -181,6 +202,9 @@ namespace SGT {
 	template<typename _Type>
 	void Vector<_Type>::remove(const _Type& data)
 	{
+		if (m_capacity > 10 && m_size == m_capacity / 3) {
+			shrinkMemoryAllocation();
+		}
 		for (int i = 0; i < m_size; i++) {
 			std::cout << "Array: " << m_array[i] << ", Data: " << data << std::endl;
 			if (m_array[i] == data) {
@@ -201,6 +225,9 @@ namespace SGT {
 	template<typename _Type>
 	_Type Vector<_Type>::pop_back()
 	{
+		if (m_capacity > 10 && m_size == m_capacity / 3) {
+			shrinkMemoryAllocation();
+		}
 		_Type data = std::move(m_array[m_size - 1]);
 		m_size--;
 		
@@ -233,6 +260,7 @@ namespace SGT {
 	void Vector<_Type>::clear()
 	{
 		delete[] m_array;
+		m_capacity = 10;
 		m_array = new _Type[m_capacity];
 		m_size = 0;
 	}
