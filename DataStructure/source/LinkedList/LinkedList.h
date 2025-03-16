@@ -39,11 +39,11 @@ namespace SGT {
 		}
 
 		void printData() {
-			SGT::DoublyNode<int>* temp = m_tail;
+			SGT::DoublyNode<int>* temp = m_head;
 
 			for (int i = 0; i < m_size; i++) {
 				std::cout << "[" << temp << "]: " << temp->data << std::endl;
-				temp = temp->previousNode;
+				temp = temp->nextNode;
 			}
 		}
 
