@@ -4,20 +4,23 @@
 namespace SGT {
 
 	template<typename _Type>
-	class LinkedList {
+	class List {
 	private:
 		SGT::DoublyNode<_Type>* m_head;
 		SGT::DoublyNode<_Type>* m_tail;
 		size_t m_size;
 
 	public:
-		LinkedList()
+		List()
 			:m_head(nullptr), m_tail(nullptr), m_size(0) {
 		}
 
-		LinkedList(const _Type& data) {
+		List(const _Type& data) {
 			m_head = new SGT::DoublyNode<_Type>(data);
 			m_size++;
+		}
+		~List() {
+
 		}
 
 		void push_back(const _Type& data) {
