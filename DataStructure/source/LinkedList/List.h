@@ -41,6 +41,40 @@ namespace SGT {
 
 		}
 
+		void insertAt(const int& index, const _Type& data) {
+			SGT::DoublyNode<_Type>* newNode = new SGT::DoublyNode<_Type>(data);
+
+			if (index < 0) {
+				std::cerr << "[Inavlid]: index cannot be negative\n";
+				return;
+			}
+			if (index == 0) {
+				newNode->nextNode = m_head;
+				m_head->previousNode = newNode;
+				m_head = newNode;
+				m_size++;
+				return;
+			}
+			if (index >= m_size) {
+				m_tail->nextNode = newNode;
+				newNode->previousNode = m_tail;
+				m_tail = newNode;
+				m_size++;
+				return;
+			}
+
+			SGT::DoublyNode<_Type>* temp = m_head;
+			for (int i = 0; i < index; i++) {
+				temp = temp->nextNode;
+			}
+
+			newNode->nextNode = temp->nextNode;
+			newNode->previousNode = temp;
+			temp->nextNode->previousNode = newNode;
+			temp->nextNode = newNode;
+			m_size++;
+		}
+
 		void printData() {
 			SGT::DoublyNode<int>* temp = m_head;
 
