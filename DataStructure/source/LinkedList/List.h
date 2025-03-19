@@ -75,6 +75,10 @@ namespace SGT {
 			m_size++;
 		}
 
+		const size_t size() const {
+			return m_size;
+		}
+
 		void printData() {
 			SGT::DoublyNode<int>* temp = m_head;
 
