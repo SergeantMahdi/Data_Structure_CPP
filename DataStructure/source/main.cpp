@@ -13,7 +13,8 @@ int main() {
 	list.push_back(4);
 	list.push_back(5);
 	list.push_back(6);
-
+	list.remove(2);
+	std::cout << "[Removing]: " << "index 2" << std::endl;
 	list.insertAt(1, 99);
 	list.insertAt(0, 19);
 

@@ -6,9 +6,13 @@ namespace SGT {
 	template<typename _Type>
 	class List {
 	private:
-		SGT::DoublyNode<_Type>* m_head;
-		SGT::DoublyNode<_Type>* m_tail;
+		#define Node SGT::DoublyNode<_Type>
+
+	private:
+		Node* m_head;
+		Node* m_tail;
 		size_t m_size;
+
 
 	public:
 		List()
@@ -16,16 +20,17 @@ namespace SGT {
 		}
 
 		List(const _Type& data) {
-			m_head = new SGT::DoublyNode<_Type>(data);
+			m_head = new Node(data);
 			m_size++;
 		}
 		~List() {
 
 		}
 
+		//Time Complexity: O(1)
 		void push_back(const _Type& data) {
 
-			SGT::DoublyNode<_Type>* newNode = new SGT::DoublyNode<_Type>(data);
+			Node* newNode = new Node(data);
 
 			if (m_head == nullptr) {
 				m_head = newNode;
@@ -41,8 +46,9 @@ namespace SGT {
 
 		}
 
+		//Time Complexity: O(N)
 		void insertAt(const int& index, const _Type& data) {
-			SGT::DoublyNode<_Type>* newNode = new SGT::DoublyNode<_Type>(data);
+			Node* newNode = new Node(data);
 
 			if (index < 0) {
 				std::cerr << "[Inavlid]: index cannot be negative\n";
@@ -68,17 +74,62 @@ namespace SGT {
 				temp = temp->nextNode;
 			}
 
-			newNode->nextNode = temp->nextNode;
-			newNode->previousNode = temp;
-			temp->nextNode->previousNode = newNode;
-			temp->nextNode = newNode;
+			newNode->nextNode = temp;
+			newNode->previousNode = temp->previousNode;
+			temp->previousNode->nextNode = newNode;
+			temp->previousNode = newNode;
 			m_size++;
 		}
 
+		//Time Complexity: O(1)
 		const size_t size() const {
 			return m_size;
 		}
 
+		//Time Complexity: O(1)
+		_Type pop() {
+			
+			Node* temp = m_tail;
+			_Type data = m_tail->data;
+
+			m_tail = m_tail->previousNode;
+			m_tail->nextNode = nullptr;
+
+			delete temp;
+			m_size--;
+
+			return data;
+
+		}
+
+		void remove(const int& index) {
+			Node* temp = m_head;
+			if (index < 0) {
+				std::cerr << "[Inavlid]: index cannot be negative\n";
+				return;
+			}
+			if (index > m_size  - 1) {
+				std::cerr << "[Inavlid]: index cannot be bigger than list size\n";
+				return;
+			}
+			if (index ==  m_size - 1) {
+				Node* lastNode = m_tail;
+				m_tail = m_tail->previousNode;
+				delete lastNode;
+				return;
+			}
+
+			for (int i = 0; i < index; i++) {
+				temp = temp->nextNode;
+			}
+
+			temp->previousNode->nextNode = temp->nextNode;
+			temp->nextNode->previousNode = temp->previousNode;
+			delete temp;
+
+		}
+
+		//Time Complexity: O(N)
 		void printData() {
 			SGT::DoublyNode<int>* temp = m_head;
 
