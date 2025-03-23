@@ -45,6 +45,23 @@ namespace SGT {
 			m_size++;
 
 		}
+		void push_front(const _Type& data) {
+
+			Node* newNode = new Node(data);
+
+			if (m_head == nullptr) {
+				m_head = newNode;
+				m_tail = newNode;
+				m_size++;
+				return;
+			}
+
+			m_head->previousNode = newNode;
+			newNode->nextNode = m_head;
+			m_head = newNode;
+			m_size++;
+
+		}
 
 		//Time Complexity: O(N)
 		void insertAt(const int& index, const _Type& data) {
@@ -102,6 +119,7 @@ namespace SGT {
 
 		}
 
+		//Time Complexity: O(1)
 		void remove(const int& index) {
 			Node* temp = m_head;
 			if (index < 0) {
@@ -126,9 +144,25 @@ namespace SGT {
 			temp->previousNode->nextNode = temp->nextNode;
 			temp->nextNode->previousNode = temp->previousNode;
 			delete temp;
+			m_size--;
 
 		}
 
+		void remove_front() {
+			Node* temp = m_head;
+			m_head = m_head->nextNode;
+			delete temp;
+			m_head->previousNode = nullptr;
+			m_size--;
+		}
+
+		void remove_back() {
+			Node* temp = m_tail;
+			m_tail = m_tail->previousNode;
+			delete temp;
+			m_tail->nextNode = nullptr;
+			m_size--;
+		}
 		//Time Complexity: O(N)
 		void printData() {
 			SGT::DoublyNode<int>* temp = m_head;
