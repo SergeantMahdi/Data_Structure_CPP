@@ -16,9 +16,11 @@ How can you do that? Well by knowing how everything works. that's why employers 
 ## List of Data Structures in the Repo
 
 > [!NOTE]
-> I'll update this section whenever I add new one.
+> I'll update this section whenever I add a new Data Structure or Abstract Data Type.
 
-1. Vector (Dynamic Arrays).
+1. Vector (Dynamic Arrays)
+2. String
+3. List (Linked List)
 
 ## Resources
 
