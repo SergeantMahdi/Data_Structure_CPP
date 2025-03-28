@@ -119,7 +119,7 @@ namespace SGT {
 
 		}
 
-		//Time Complexity: O(1)
+		//Time Complexity: O(N)
 		void remove(const int& index) {
 			Node* temp = m_head;
 			if (index < 0) {
@@ -147,7 +147,7 @@ namespace SGT {
 			m_size--;
 
 		}
-
+		//Time Complexity: O(1)
 		void remove_front() {
 			Node* temp = m_head;
 			m_head = m_head->nextNode;
@@ -156,12 +156,27 @@ namespace SGT {
 			m_size--;
 		}
 
+		//Time Complexity: O(1)
 		void remove_back() {
 			Node* temp = m_tail;
 			m_tail = m_tail->previousNode;
 			delete temp;
 			m_tail->nextNode = nullptr;
 			m_size--;
+		}
+
+		//Time Complexity: O(1)
+		void append(const List& secondList) {
+
+			if (secondList.size() == 0) {
+				return;
+			}
+
+			m_tail->nextNode = secondList.m_head;
+			secondList.m_head->previousNode = m_tail;
+			m_tail = secondList.m_tail;
+			return;
+
 		}
 		//Time Complexity: O(N)
 		void printData() {
