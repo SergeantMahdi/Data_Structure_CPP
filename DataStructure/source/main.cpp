@@ -6,7 +6,7 @@
 
 
 int main() {
-	SGT::List<int> list;
+	/*SGT::List<int> list;
 	SGT::List<int> list2;
 
 	list.push_back(1);
@@ -21,8 +21,13 @@ int main() {
 	list2.push_back(52);
 	list2.push_back(62);
 	list.append(list2);
-	list.printData();
+	list.printData();*/
 
+
+	SGT::Vector<int> vec;
+	vec.push_back(10);
+
+	vec.printData();
 
 
 }
