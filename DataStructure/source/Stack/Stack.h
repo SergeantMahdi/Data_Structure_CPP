@@ -1,0 +1,43 @@
+#pragma once
+
+#include "../Node/SinglyNode.h"
+namespace SGT {
+
+	template<typename _Type>
+	class Stack {
+	private:
+		using Node = SGT::SinglyNode<_Type>;
+	private:
+		Node* m_head;
+		size_t m_size;
+
+	public:
+		Stack()
+			:m_head(nullptr), m_size(0) {}
+
+		void push(const _Type& data) {
+			Node* newNode = new Node(data);
+
+			if (m_size == 0) {
+				m_head = newNode;
+				m_size++;
+				return;
+			}
+
+			newNode->nextNode = m_head;
+			m_head = newNode;
+			m_size++;
+		}
+
+		void printData() {
+			Node* temp = m_head;
+
+			while(temp){
+				std::cout << "[" << &temp << "]: " << temp->data << std::endl;
+				temp = temp->nextNode;
+			}
+		}
+
+	};
+
+}
