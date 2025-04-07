@@ -6,7 +6,7 @@ namespace SGT {
 	template<typename _Type>
 	class List {
 	private:
-		#define Node SGT::DoublyNode<_Type>
+		using Node = SGT::DoublyNode<_Type>;
 
 	private:
 		Node* m_head;
