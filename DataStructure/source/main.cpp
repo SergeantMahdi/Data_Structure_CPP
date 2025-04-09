@@ -3,6 +3,8 @@
 #include "Vector/Vector.h"
 #include "String/String.h"
 #include "LinkedList/List.h"
+#include "Stack/Stack.h"
+
 
 
 int main() {
@@ -24,10 +26,12 @@ int main() {
 	list.printData();*/
 
 
-	SGT::Vector<int> vec;
-	vec.push_back(10);
-
-	vec.printData();
-
-
+	SGT::Stack<int> stack;
+	stack.push(1);
+	stack.push(2);
+	stack.push(3);
+	stack.printData();
+	stack.pop();
+	stack.printData();
+	std::cout << stack.top();
 }
