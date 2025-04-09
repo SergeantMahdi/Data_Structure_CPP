@@ -29,6 +29,28 @@ namespace SGT {
 			m_size++;
 		}
 
+		void pop() {
+			Node* temp = m_head;
+			m_head = m_head->nextNode;
+			delete temp;
+			m_size--;
+		}
+
+		const bool isEmpty() const {
+			if (m_size != 0) {
+				return false;
+			}
+			return true;
+		}
+
+		_Type& top() const {
+			return m_head->data;
+		}
+
+		const size_t size() const {
+			return m_size;
+		}
+
 		void printData() {
 			Node* temp = m_head;
 

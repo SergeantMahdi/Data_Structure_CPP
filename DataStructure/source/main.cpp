@@ -31,4 +31,7 @@ int main() {
 	stack.push(2);
 	stack.push(3);
 	stack.printData();
+	stack.pop();
+	stack.printData();
+	std::cout << stack.top();
 }
