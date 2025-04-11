@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 900 235">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-width: 3px;
+      }
+
+      .st0, .st1 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .st2 {
+        font-size: 16px;
+      }
+
+      .st2, .st3, .st4, .st5 {
+        font-family: Impact, Impact;
+      }
+
+      .st1, .st5 {
+        fill: #ffd600;
+      }
+
+      .st3, .st5 {
+        font-size: 21px;
+      }
+
+      .st4 {
+        fill: #ff2c2c;
+        font-size: 14px;
+      }
+    </style>
+  </defs>
+  <rect class="st1" x="87.61" y="96.2" width="252.66" height="97.04" rx="19.23" ry="19.23"/>
+  <rect class="st1" x="426.07" y="96.2" width="365.68" height="97.04" rx="19.23" ry="19.23"/>
+  <text class="st3" transform="translate(126 153.02)"><tspan x="0" y="0">Data</tspan></text>
+  <text class="st2" transform="translate(224.68 141.45)"><tspan x="0" y="0">Address of the </tspan><tspan x="14.69" y="19.2">next node</tspan></text>
+  <line class="st0" x1="200.63" y1="96.2" x2="200.63" y2="193.24"/>
+  <text class="st3" transform="translate(589.33 150.07)"><tspan x="0" y="0">Data</tspan></text>
+  <text class="st2" transform="translate(685.03 141.45)"><tspan x="0" y="0">Address of the </tspan><tspan x="14.69" y="19.2">next node</tspan></text>
+  <text class="st2" transform="translate(441.7 141.45)"><tspan x="0" y="0">Address of the </tspan><tspan x=".04" y="19.2">previous node</tspan></text>
+  <line class="st0" x1="668.38" y1="96.2" x2="668.38" y2="193.24"/>
+  <line class="st0" x1="549.15" y1="96.2" x2="549.15" y2="193.24"/>
+  <text class="st5" transform="translate(155.49 27.28)"><tspan x="0" y="0">SINGLY NODE</tspan></text>
+  <text class="st5" transform="translate(557.43 26.94)"><tspan x="0" y="0">Doubly NODE</tspan></text>
+  <text class="st4" transform="translate(122.55 48.04)"><tspan x="0" y="0">Contains a variable for data</tspan><tspan x="0" y="16.8">and another for the address of the </tspan><tspan x="0" y="33.6">next node</tspan></text>
+  <text class="st4" transform="translate(519.56 44.19)"><tspan x="0" y="0">Contains a variable for data</tspan><tspan x="0" y="16.8">and two others for the address of </tspan><tspan x="0" y="33.6">the next node</tspan></text>
+</svg>
