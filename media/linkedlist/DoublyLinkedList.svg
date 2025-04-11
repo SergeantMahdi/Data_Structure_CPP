@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 900 235">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0, .st1 {
+        font-size: 14px;
+      }
+
+      .st0, .st1, .st2, .st3, .st4 {
+        isolation: isolate;
+      }
+
+      .st0, .st1, .st2, .st3, .st5, .st6, .st7 {
+        font-family: Impact, Impact;
+      }
+
+      .st0, .st3, .st8, .st9 {
+        fill: #ff2c2c;
+      }
+
+      .st1, .st2, .st10, .st11, .st12, .st7 {
+        fill: #ffd600;
+      }
+
+      .st13, .st14, .st10, .st8, .st9, .st11, .st12 {
+        stroke-miterlimit: 10;
+      }
+
+      .st13, .st14, .st10, .st9 {
+        stroke-width: 3px;
+      }
+
+      .st13, .st11 {
+        stroke: #000;
+      }
+
+      .st2, .st3, .st7 {
+        font-size: 21px;
+      }
+
+      .st14 {
+        fill: none;
+        stroke: #fbb03b;
+      }
+
+      .st10, .st12 {
+        stroke: #ffd600;
+      }
+
+      .st8, .st9 {
+        stroke: #ff2c2c;
+      }
+
+      .st5 {
+        font-size: 10.31px;
+      }
+
+      .st6 {
+        font-size: 13.54px;
+      }
+
+      .st15 {
+        fill: #fbb03b;
+      }
+    </style>
+  </defs>
+  <rect class="st11" x="661.59" y="94.42" width="235.72" height="62.55" rx="19.23" ry="19.23"/>
+  <text class="st6" transform="translate(766.83 129.14)"><tspan x="0" y="0">Data</tspan></text>
+  <text class="st5" transform="translate(828.52 123.59)"><tspan x="0" y="0">Address of the </tspan><tspan x="9.47" y="12.38">next node</tspan></text>
+  <text class="st5" transform="translate(671.66 123.59)"><tspan x="0" y="0">Address of the </tspan><tspan x=".03" y="12.38">previous node</tspan></text>
+  <line class="st13" x1="817.78" y1="94.42" x2="817.78" y2="156.97"/>
+  <line class="st13" x1="740.93" y1="94.42" x2="740.93" y2="156.97"/>
+  <rect class="st11" x="341.13" y="95.55" width="235.72" height="62.55" rx="19.23" ry="19.23"/>
+  <text class="st6" transform="translate(446.36 130.27)"><tspan x="0" y="0">Data</tspan></text>
+  <text class="st5" transform="translate(508.06 124.72)"><tspan x="0" y="0">Address of the </tspan><tspan x="9.47" y="12.38">next node</tspan></text>
+  <text class="st5" transform="translate(351.2 124.72)"><tspan x="0" y="0">Address of the </tspan><tspan x=".03" y="12.38">previous node</tspan></text>
+  <line class="st13" x1="497.32" y1="95.55" x2="497.32" y2="158.1"/>
+  <line class="st13" x1="420.46" y1="95.55" x2="420.46" y2="158.1"/>
+  <rect class="st11" x="4.23" y="95.55" width="235.72" height="62.55" rx="19.23" ry="19.23"/>
+  <text class="st6" transform="translate(109.46 130.27)"><tspan x="0" y="0">Data</tspan></text>
+  <text class="st5" transform="translate(171.15 124.72)"><tspan x="0" y="0">Address of the </tspan><tspan x="9.47" y="12.38">next node</tspan></text>
+  <text class="st5" transform="translate(14.3 124.72)"><tspan x="0" y="0">Address of the </tspan><tspan x=".03" y="12.38">previous node</tspan></text>
+  <line class="st13" x1="160.41" y1="95.55" x2="160.41" y2="158.1"/>
+  <line class="st13" x1="83.56" y1="95.55" x2="83.56" y2="158.1"/>
+  <g>
+    <line class="st14" x1="262.21" y1="115.43" x2="324.63" y2="115.43"/>
+    <polygon class="st15" points="314.69 127.69 312.65 125.5 323.48 115.43 312.65 105.36 314.69 103.16 327.89 115.43 314.69 127.69"/>
+  </g>
+  <g>
+    <line class="st9" x1="263.84" y1="141.41" x2="326.26" y2="141.41"/>
+    <polygon class="st8" points="260.58 141.41 273.78 129.14 275.82 131.34 264.99 141.41 275.82 151.48 273.78 153.67 260.58 141.41"/>
+  </g>
+  <g>
+    <line class="st14" x1="591.71" y1="113.84" x2="654.13" y2="113.84"/>
+    <polygon class="st15" points="644.19 126.1 642.15 123.91 652.98 113.84 642.15 103.77 644.19 101.57 657.39 113.84 644.19 126.1"/>
+  </g>
+  <g>
+    <line class="st9" x1="593.34" y1="139.82" x2="655.76" y2="139.82"/>
+    <polygon class="st8" points="590.08 139.82 603.28 127.55 605.32 129.75 594.49 139.82 605.32 149.89 603.28 152.08 590.08 139.82"/>
+  </g>
+  <g class="st4">
+    <text class="st1" transform="translate(262.21 101.57)"><tspan x="0" y="0">Next Node</tspan></text>
+  </g>
+  <g class="st4">
+    <text class="st0" transform="translate(254.11 169.26)"><tspan x="0" y="0">Previous Node</tspan></text>
+  </g>
+  <g class="st4">
+    <text class="st1" transform="translate(592.47 99.52)"><tspan x="0" y="0">Next Node</tspan></text>
+  </g>
+  <g class="st4">
+    <text class="st0" transform="translate(584.37 167.21)"><tspan x="0" y="0">Previous Node</tspan></text>
+  </g>
+  <text class="st7" transform="translate(377.45 41.42)"><tspan x="0" y="0">DOUBLY LINKED LIST</tspan></text>
+  <g>
+    <line class="st9" x1="41.32" y1="61.33" x2="41.32" y2="91"/>
+    <polygon class="st8" points="41.32 59.78 53.59 66.05 51.39 67.02 41.32 61.87 31.25 67.02 29.06 66.05 41.32 59.78"/>
+  </g>
+  <g>
+    <line class="st10" x1="858.68" y1="59.64" x2="858.68" y2="89.32"/>
+    <polygon class="st12" points="858.68 58.09 870.95 64.37 868.75 65.34 858.68 60.19 848.61 65.34 846.42 64.37 858.68 58.09"/>
+  </g>
+  <g class="st4">
+    <text class="st3" transform="translate(25.72 47.6)"><tspan x="0" y="0">NULL</tspan></text>
+  </g>
+  <g class="st4">
+    <text class="st2" transform="translate(841.44 48.31)"><tspan x="0" y="0">NULL</tspan></text>
+  </g>
+</svg>
