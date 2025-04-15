@@ -4,6 +4,7 @@
 #include "String/String.h"
 #include "LinkedList/List.h"
 #include "Stack/Stack.h"
+#include "Queue/Queue.h"
 
 
 
@@ -26,12 +27,20 @@ int main() {
 	list.printData();*/
 
 
-	SGT::Stack<int> stack;
+	/*SGT::Stack<int> stack;
 	stack.push(1);
 	stack.push(2);
 	stack.push(3);
 	stack.printData();
 	stack.pop();
 	stack.printData();
-	std::cout << stack.top();
+	std::cout << stack.top();*/
+
+	SGT::Queue<int> queue;
+	queue.push(1);
+	queue.push(2);
+	queue.push(3);
+	queue.push(4);
+	queue.printData();
+
 }
