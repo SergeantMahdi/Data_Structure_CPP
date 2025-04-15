@@ -2,9 +2,9 @@
 
 ## 1. commit template
 your commit should be like this: <br/>
-`[Status]<line of code that changed><functions that you made a change>: a brief detailed message about the change` <br/>
+`[Status]: a brief detailed message about the change` <br/>
 > Example: <br/>
-> [FIX]<10 to 30><push_back>: fix increasing m_size by adding data
+> [FIX]: fix increasing m_size by adding data
 
 ## 2. Pull request template:
 your explanation must be elaborate, explain the parts you made a change and how it works.
