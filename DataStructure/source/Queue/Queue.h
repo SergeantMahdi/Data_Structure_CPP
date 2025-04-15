@@ -15,7 +15,7 @@ private:
 public:
 
 	Queue()
-		:m_head(nullptr),m_size(0){}
+		:m_head(nullptr), m_tail(nullptr),m_size(0){}
 
 	~Queue() {
 		Node* head = m_head;
