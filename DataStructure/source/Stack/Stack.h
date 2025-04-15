@@ -15,7 +15,10 @@ namespace SGT {
 		Stack()
 			:m_head(nullptr), m_size(0) {}
 
+		//Push Time Complexity: O(1)
 		void push(const _Type& data) {
+			//Add the data to the head of container.
+
 			Node* newNode = new Node(data);
 
 			if (m_size == 0) {
@@ -29,7 +32,9 @@ namespace SGT {
 			m_size++;
 		}
 
+		//Pop Time Complexity: O(1)
 		void pop() {
+			//Remove the head from container
 			Node* temp = m_head;
 			m_head = m_head->nextNode;
 			delete temp;
