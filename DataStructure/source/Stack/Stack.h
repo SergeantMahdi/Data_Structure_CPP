@@ -14,7 +14,17 @@ namespace SGT {
 	public:
 		Stack()
 			:m_head(nullptr), m_size(0) {}
+		~Stack() {
+			Node* head = m_head;
+			Node* temp = m_head;
 
+			while (temp) {
+				temp = temp->nextNode;
+				delete head;
+				head = temp;
+
+			}
+		}
 		//Push Time Complexity: O(1)
 		void push(const _Type& data) {
 			//Add the data to the head of container.
