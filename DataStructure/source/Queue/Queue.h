@@ -44,7 +44,20 @@ public:
 
 	}
 
+	_Type pop() {
+		if (!m_head) {
+			std::cout << "Queue is Empty\n";
+			return NULL;
+		}
+		Node* temp = m_head;
+		_Type temporaryData = temp->data;
 
+		m_head = m_head->nextNode;
+		delete temp;
+		m_size--;
+
+		return temporaryData;
+	}
 
 	const size_t size() const{
 		return m_size;
