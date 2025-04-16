@@ -44,6 +44,12 @@ public:
 
 	}
 
+
+
+	const size_t size() const{
+		return m_size;
+	}
+
 	void printData() {
 		Node* temp = m_head;
 
