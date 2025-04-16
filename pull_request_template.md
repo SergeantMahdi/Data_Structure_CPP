@@ -1,13 +1,5 @@
-# Pull request & commit template:
+Name:
+Email:
+GitHub Profile:
 
-## 1. commit template
-your commit should be like this: <br/>
-`[Status]: a brief detailed message about the change` <br/>
-> Example: <br/>
-> [FIX]: fix increasing m_size by adding data
-
-## 2. Pull request template:
-your explanation must be elaborate, explain the parts you made a change and how it works.
-
-> Expmale: <br/>
-> by adding new data into vector the m_size won't increase. I made a change in **This Line Of Code**  to increase the size evertime users add a new input.
+Changes:
