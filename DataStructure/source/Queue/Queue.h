@@ -63,6 +63,13 @@ public:
 		return m_size;
 	}
 
+	const bool isEmpty() const{
+		if (m_size == 0 || m_head == nullptr) {
+			return true;
+		}
+		return false;
+	}
+
 	void printData() {
 		Node* temp = m_head;
 

@@ -42,6 +42,7 @@ int main() {
 	queue.push(3);
 	queue.push(4);
 	queue.printData();
+	std::cout << "Empty? " << queue.isEmpty() << std::endl;
 	std::cout << "Popped Data: " << queue.pop() << std::endl;
 	std::cout << "Size: " << queue.size() << std::endl;
 
@@ -56,6 +57,7 @@ int main() {
 	std::cout << "Size: " << queue.size() << std::endl;
 	queue.printData();
 	std::cout << "Popped Data: " << queue.pop() << std::endl;
+	std::cout << "Empty? " << queue.isEmpty() << std::endl;
 
 
 }
