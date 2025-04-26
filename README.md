@@ -5,6 +5,11 @@ As I'm learning DSA, I decided to make a repo for people interested in how Abstr
 > [!TIP]
 > The explanation of every ADT and DSA will be added to **WIKI** soon
 
+## How To Build Solution File For VS2022
+
+> [!CAUTIOUS]
+> Run Build.bat file to build the solution
+
 ## Why You Should Learn Data Structure and Algorithm (DSA)
 
 The first and main reason you ought to know is these data structures and algorithms will help you to understand the underlying process of each type and Abstract Data Type (ADT). <br>
