@@ -23,9 +23,15 @@ How can you do that? Well by knowing how everything works. that's why employers 
 > [!NOTE]
 > I'll update this section whenever I add a new Data Structure or Abstract Data Type.
 
-1. Vector (Dynamic Arrays)
-2. String
-3. List (Linked List)
+| Data Structure | Abstract Data Type                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------ |
+| Dynamic Array  | [Vector](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Vector)    |
+| String         | [String](https://github.com/SergeantMahdi/Data_Structure_CPP/blob/main/DataStructure/source/String)    |
+| Linked List    | [List](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/LinkedList)  |
+| Linked List    | [Stack](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Stack)      |
+| Linked List    | [Queue](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Queue)      |
+| Node           | [Doubly Node](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Node) |
+| Node           | [Singly Node](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Node) |
 
 ## Resources
 
