@@ -7,7 +7,7 @@ As I'm learning DSA, I decided to make a repo for people interested in how Abstr
 
 ## How To Build Solution File For VS2022
 
-> [!CAUTIOUS]
+> [!IMPORTANT]
 > Run Build.bat file to build the solution
 
 ## Why You Should Learn Data Structure and Algorithm (DSA)
