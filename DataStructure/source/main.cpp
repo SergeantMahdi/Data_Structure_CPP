@@ -1,14 +1,27 @@
 #include <iostream>
-#include <list>
-#include "Vector/Vector.h"
-#include "String/String.h"
-#include "LinkedList/List.h"
-#include "Stack/Stack.h"
-#include "Queue/Queue.h"
-
+//#include "Vector/Vector.h"
+//#include "String/String.h"
+//#include "LinkedList/List.h"
+//#include "Stack/Stack.h"
+//#include "Queue/Queue.h"
+#include "BinarySearchTree/BinarySearchTree.h"
 
 
 int main() {
+
+	SGT::BinarySearchTree<int> tree;
+
+	tree.push(10);
+	tree.push(34);
+	tree.push(3);
+	tree.push(11);
+	tree.push(14);
+	tree.push(1);
+	tree.push(5);
+
+	tree.traverseInOrder();
+
+
 	/*SGT::List<int> list;
 	SGT::List<int> list2;
 
@@ -36,28 +49,28 @@ int main() {
 	stack.printData();
 	std::cout << stack.top();*/
 
-	SGT::Queue<int> queue;
-	queue.push(1);
-	queue.push(2);
-	queue.push(3);
-	queue.push(4);
-	queue.printData();
-	std::cout << "Empty? " << queue.isEmpty() << std::endl;
-	std::cout << "Popped Data: " << queue.pop() << std::endl;
-	std::cout << "Size: " << queue.size() << std::endl;
+	//SGT::Queue<int> queue;
+	//queue.push(1);
+	//queue.push(2);
+	//queue.push(3);
+	//queue.push(4);
+	//queue.printData();
+	//std::cout << "Empty? " << queue.isEmpty() << std::endl;
+	//std::cout << "Popped Data: " << queue.pop() << std::endl;
+	//std::cout << "Size: " << queue.size() << std::endl;
 
-	queue.printData();
-	std::cout << "Popped Data: " << queue.pop() << std::endl;
-	std::cout << "Size: " << queue.size() << std::endl;
-	queue.printData();
-	std::cout << "Popped Data: " << queue.pop() << std::endl;
-	std::cout << "Size: " << queue.size() << std::endl;
-	queue.printData();
-	std::cout << "Popped Data: " << queue.pop() << std::endl;
-	std::cout << "Size: " << queue.size() << std::endl;
-	queue.printData();
-	std::cout << "Popped Data: " << queue.pop() << std::endl;
-	std::cout << "Empty? " << queue.isEmpty() << std::endl;
+	//queue.printData();
+	//std::cout << "Popped Data: " << queue.pop() << std::endl;
+	//std::cout << "Size: " << queue.size() << std::endl;
+	//queue.printData();
+	//std::cout << "Popped Data: " << queue.pop() << std::endl;
+	//std::cout << "Size: " << queue.size() << std::endl;
+	//queue.printData();
+	//std::cout << "Popped Data: " << queue.pop() << std::endl;
+	//std::cout << "Size: " << queue.size() << std::endl;
+	//queue.printData();
+	//std::cout << "Popped Data: " << queue.pop() << std::endl;
+	//std::cout << "Empty? " << queue.isEmpty() << std::endl;
 
 
 }
