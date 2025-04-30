@@ -10,8 +10,8 @@ namespace SGT {
 	template<typename _Type>
 	struct Node {
 		_Type data;
-		Node* leftChild;
-		Node* rightChild;
+		Node<_Type>* leftChild;
+		Node<_Type>* rightChild;
 
 		Node()
 		  :leftChild(nullptr), rightChild(nullptr) {}
