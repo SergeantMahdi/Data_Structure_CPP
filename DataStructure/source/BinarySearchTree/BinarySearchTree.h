@@ -22,13 +22,33 @@ namespace SGT {
 		BinarySearchTree()
 			:m_root(nullptr), m_size(0) {}
 
-		BinarySearchTree(const _Type& data)
-			:m_root(nullptr), m_size(0) {
-			push(data);
-		}
 
 		~BinarySearchTree() {
+			if (!m_root) return;
 
+			SGT::Stack<Node*> stack1;
+			SGT::Stack<Node*> stack2;
+			stack1.push(m_root);
+
+			while (!stack1.isEmpty()) {
+				Node* current = stack1.top();
+				stack1.pop();
+
+				stack2.push(current);
+
+				if (current->leftChild) {
+					stack1.push(current->leftChild);
+				}
+
+				if (current->rightChild) {
+					stack1.push(current->rightChild);
+				}
+			}
+
+			while (!stack2.isEmpty()) {
+				delete stack2.top();
+				stack2.pop();
+			}
 		}
 
 		void push(const _Type& data) {
