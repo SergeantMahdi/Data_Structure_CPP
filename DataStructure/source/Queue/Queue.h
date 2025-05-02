@@ -53,7 +53,7 @@ public:
 		m_size--;
 	}
 
-	_Type& top() const {
+	_Type& front() const {
 
 		return m_head->data;
 	}

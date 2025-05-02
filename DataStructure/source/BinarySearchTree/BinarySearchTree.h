@@ -191,7 +191,7 @@ namespace SGT {
 			queue.push(m_root);
 
 			while (!queue.isEmpty()) {
-				Node* current = queue.top();
+				Node* current = queue.front();
 				queue.pop();
 
 				if (current->leftChild) {
