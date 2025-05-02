@@ -54,6 +54,7 @@ public:
 	}
 
 	_Type& top() const {
+
 		return m_head->data;
 	}
 
