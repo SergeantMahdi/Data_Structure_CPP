@@ -19,8 +19,14 @@ int main() {
 	tree.push(1);
 	tree.push(5);
 
-	tree.traverseInOrder();
-
+	
+	tree.traverseInOrder();;
+	std::cout << "===================\n";
+	tree.traversePostOrder();
+	std::cout << "===================\n";
+	tree.traversePreOrder();
+	std::cout << "===================\n";
+	tree.traverseLevelOrder();
 
 	/*SGT::List<int> list;
 	SGT::List<int> list2;

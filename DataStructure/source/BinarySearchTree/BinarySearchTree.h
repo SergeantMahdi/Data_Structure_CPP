@@ -1,6 +1,8 @@
 #pragma once
 #include "../Node/TreeDoublyNode.h"
 #include "../Stack/Stack.h"
+#include "../Queue/Queue.h"
+
 
 namespace SGT {
 
@@ -71,6 +73,7 @@ namespace SGT {
 			// You can Use loop and recursion
 
 			/* RECURSION
+			if (!root) return;
 			traverseInOrder(root->leftChild);
 			std::cout << "[Data]: " << root->data;
 			raverseInOrder(root->rightChild);
@@ -88,14 +91,99 @@ namespace SGT {
 				currentNode = stack.top();
 				stack.pop();
 
-				std::cout << "[Data]: " << currentNode->data << std::endl;
+				std::cout << "[InOrder]: " << currentNode->data << std::endl;
 
 				currentNode = currentNode->rightChild;
 
 			}
 
+
 		}
 
+		void traversePostOrder() {
+
+			/* RECURSION
+			if (!root) return;
+			traversePostOrder(root->leftChild);
+			traversePostOrder(root->rightChild);
+			std::cout << "[Data]: " << root->data;
+			*/
+
+			SGT::Stack<Node*> stack1;
+			SGT::Stack<Node*> stack2;
+			stack1.push(m_root);
+
+			while (!stack1.isEmpty()) {
+				Node* current = stack1.top();
+				stack1.pop();
+
+				stack2.push(current);
+
+				if (current->leftChild) {
+					stack1.push(current->leftChild);
+				}
+
+				if (current->rightChild) {
+					stack1.push(current->rightChild);
+				}
+			}
+
+			while (!stack2.isEmpty()) {
+				Node* node = stack2.top();
+				stack2.pop();
+				std::cout << "[PostOrder]: " << node->data << std::endl;
+			}
+
+		}
+
+		void traversePreOrder() {
+
+			/* RECURSION
+		if (!root) return;
+		std::cout << "[Data]: " << root->data;
+		traversePreOrder(root->leftChild);
+		traversePreOrder(root->rightChild);
+		*/
+
+			SGT::Stack<Node*> stack;
+			stack.push(m_root);
+
+			while (!stack.isEmpty()) {
+				Node* current = stack.top();
+				stack.pop();
+
+				std::cout << "[PreOrder]: " << current->data << std::endl;
+
+				if (current->rightChild) {
+					stack.push(current->rightChild);
+				}
+
+				if (current->leftChild) {
+					stack.push(current->leftChild);
+				}
+			}
+
+		}
+
+		void traverseLevelOrder() {
+			SGT::Queue<Node*> queue;
+
+			queue.push(m_root);
+
+			while (!queue.isEmpty()) {
+				Node* current = queue.top();
+				queue.pop();
+
+				if (current->leftChild) {
+					queue.push(current->leftChild);
+				}
+				if (current->rightChild) {
+					queue.push(current->rightChild);
+				}
+
+				std::cout << "[LevelOrder]: " << current->data << std::endl;
+			}
+		}
 
 	};
 }
