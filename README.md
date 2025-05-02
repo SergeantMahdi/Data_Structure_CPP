@@ -32,6 +32,7 @@ How can you do that? Well by knowing how everything works. that's why employers 
 | Linked List    | [Queue](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Queue)      |
 | Node           | [Doubly Node](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Node) |
 | Node           | [Singly Node](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/Node) |
+| Binary Tree    | [Binary Search Tree (BST)](https://github.com/SergeantMahdi/Data_Structure_CPP/tree/main/DataStructure/source/BinarySearchTree) |
 
 ## Resources
 
