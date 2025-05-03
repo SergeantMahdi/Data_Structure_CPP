@@ -89,6 +89,63 @@ namespace SGT {
 			m_size++;
 		}
 
+		void remove(const _Type& targetValue) {
+
+			Node* currentNode = m_root;
+			Node* currentNodeParent;
+
+			while (currentNode) {
+				currentNodeParent = currentNode;
+
+				if (currentNode->data > targetValue) {
+					currentNode = currentNode->leftChild;
+				}
+				else if (currentNode->data < targetValue) {
+					currentNode = currentNode->rightChild;
+				}
+				else
+					break;
+			}
+
+			if (!currentNode) {
+				std::cout << targetValue << " doesn't exist in the tree\n";
+				return;
+			}
+
+			//if the node has more than 1 child
+			if (currentNode->leftChild && currentNode->rightChild) {
+				Node* successor = currentNode->rightChild;
+				Node* successorParent;
+
+				while (successor->leftChild) {
+					successorParent = successor;
+					successor = successor->leftChild;
+				}
+
+				currentNode->data = successor->data;
+
+				//check if the successor has right child to avoid memory leak and data lost
+				if (successor->rightChild) {
+					successorParent->leftChild = successor->rightChild;
+				}
+				delete successor;
+				return;
+			}
+
+			//if the node as 1 or no child
+			Node* child = currentNode->leftChild ? currentNode->leftChild : currentNode->rightChild;
+			if (currentNodeParent->leftChild == currentNode) {
+				currentNodeParent->leftChild = child;
+			}
+			else {
+				currentNodeParent->rightChild = child;
+			}
+
+			delete currentNode;
+				
+		}
+
+
 		void traverseInOrder() {
 			// You can Use loop and recursion
 
@@ -103,9 +160,11 @@ namespace SGT {
 			Node* currentNode = m_root;
 
 			while (currentNode || !stack.isEmpty()) {
-				while (currentNode) {
-					stack.push(currentNode);
-					currentNode = currentNode->leftChild;
+				if (currentNode) {
+					while (currentNode) {
+						stack.push(currentNode);
+						currentNode = currentNode->leftChild;
+					}
 				}
 
 				currentNode = stack.top();
